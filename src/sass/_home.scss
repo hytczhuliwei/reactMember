@@ -1,0 +1,368 @@
+ ul,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#home{
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid transparent;
+  .home-header{
+    width: 100%;
+    height: 10rem;
+    background-color: #30CCFF;
+    background: 
+      radial-gradient(50% 66%, rgba(48,204,255,0.00) 0, #30CCFF 66%),
+      linear-gradient(0, #30CCFF 0, #30CCFF 100%);
+    background-position: 0 -6rem , 0 3.5rem;
+    background-repeat: no-repeat;
+    border-top: 1px solid transparent;
+    .avatar{
+      width: 100%;
+      height: 4.6rem;
+      margin-top: 2.8rem;
+      img{
+        height: 3rem;
+        width: auto;
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+      }
+      p{
+        width: 100%;
+        height: 1.5rem;
+        padding-top: .5rem;
+        font-size: .8rem;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+    }
+    .header-bar{
+      width: 100%;
+      height: 2rem;
+      line-height: 1rem;
+      padding: .5rem 0;
+      margin-top: .6rem;
+      background: #63d8ff;
+      font-size: 0;
+      >span,>a{
+        width: 50%;
+        height: 100%;
+        color: #fff;
+        font-size: .75rem;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .bar-taidou{
+        text-align: right;
+        padding-right: 1rem;
+        border-right: 2px solid #fff;
+      }
+      .bar-experience{
+        text-align: left;
+        padding-left: 1rem;
+      }
+    }
+  }
+  .myMember{
+    width: 100%;
+    height: 8.5rem;
+    background: #fff;
+    margin: .5rem 0;
+    padding: 0 .75rem;
+    .myMember-header{
+      width: 100%;
+      height: 2.5rem;
+      line-height: 2.65rem;
+      border-bottom: 1px solid #e8e8e8;
+      color: #333;
+      font-size: .7rem;
+      text-indent: .7rem;
+      position: relative;
+    }
+    .myMember-header:before{
+      content: '';
+      width: .2rem;
+      height: .7rem;
+      background: #ffbb32;
+      position: absolute;
+      top: .9rem;
+      left: 0;
+      border-radius: .1rem;
+    }
+    .myMember-content{
+      width: 100%;
+      height: 6rem;
+      padding: 1rem 0;
+      .member-show-wrapper{
+        width: 13.3rem;
+        height: 3rem;
+        margin:auto;
+        font-size: 0;
+        >*{
+          display: inline-block;
+          vertical-align: top;
+        }
+        .level-item{
+          width: 1.3rem;
+          height: 1.3rem;
+          margin-top: .8rem;
+          background: #eee;
+          border-radius: 50%;
+          font-size: .65rem;
+          font-family: 'hyi4gj';
+          text-align: center;
+          line-height: 1.3rem;
+          color: #ccc;
+        }
+        .level-item.active{
+          background: #ffbb32;
+          color: #fff;
+        }
+        .level-item.current{
+          width: 2rem;
+          height: 2rem;
+          font-size: 1.2rem;
+          line-height: 2rem;
+          margin-top: .5rem;
+          box-shadow: 0 0 0 .25rem #ffda8e;
+          position: relative;
+          z-index: 0;
+        }
+        .level-line{
+          width: 1.5rem;
+          height: .25rem;
+          margin-top: 1.375rem;
+          background: #eee;
+          position: relative;
+          z-index: 1;
+          .level-line-active{
+            height: 100%;
+            background: #ffbb32;
+            // border-radius: 0 .1rem .1rem 0;
+          }
+        }
+      }
+      .member-show-line{
+        width: 100%;
+        height: 1rem;
+        border-bottom: .1rem solid #ffb359;
+        position: relative;
+        $triangleIndex: 0.25rem;
+        &:before{
+          content: '';
+          position: absolute;
+          bottom: -.1rem;
+          left: $triangleIndex;
+          width: 0;
+          height: 0;
+          border: 1rem solid transparent;
+          border-bottom-color: #ffb359;
+          border-top-width: 0;
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: -.1rem;
+          left: $triangleIndex + .1rem;
+          width: 0;
+          height: 0;
+          border: .9rem solid transparent;
+          border-bottom-color: #fff;
+          border-top-width: 0;
+        }
+      }
+    }
+    @mixin levelShow ($currentLevel, $selectLevel) {
+      $nowIndex : 0.6rem + 2.8rem * ($selectLevel - 1);
+      @if $currentLevel < $selectLevel {
+        $nowIndex : $nowIndex + 0.7rem;
+      }
+      @if $currentLevel != $selectLevel {
+        $nowIndex : $nowIndex - 0.35rem; 
+      }
+      >.member-show-line:before{
+        left: $nowIndex;  
+      }
+      >.member-show-line:after{
+        left: $nowIndex + 0.1rem;
+      }
+    }
+    .first.select-first{
+      @include levelShow(1,1);
+    }
+    .first.select-second{
+      @include levelShow(1,2);
+    }
+    .first.select-third{
+      @include levelShow(1,3);
+    }
+    .first.select-fourth{
+      @include levelShow(1,4);
+    }
+    .first.select-fifth{
+      @include levelShow(1,5);
+    }
+    .second.select-first{
+      @include levelShow(2,1);
+    }
+    .second.select-second{
+      @include levelShow(2,2);
+    }
+    .second.select-third{
+      @include levelShow(2,3);
+    }
+    .second.select-fourth{
+      @include levelShow(2,4);
+    }
+    .second.select-fifth{
+      @include levelShow(2,5);
+    }
+    .third.select-first{
+      @include levelShow(3,1);
+    }
+    .third.select-second{
+      @include levelShow(3,2);
+    }
+    .third.select-third{
+      @include levelShow(3,3);
+    }
+    .third.select-fourth{
+      @include levelShow(3,4);
+    }
+    .third.select-fifth{
+      @include levelShow(3,5);
+    }
+    .fourth.select-first{
+      @include levelShow(4,1);
+    }
+    .fourth.select-second{
+      @include levelShow(4,2);
+    }
+    .fourth.select-third{
+      @include levelShow(4,3);
+    }
+    .fourth.select-fourth{
+      @include levelShow(4,4);
+    }
+    .fourth.select-fifth{
+      @include levelShow(4,5);
+    }
+    .fifth.select-first{
+      @include levelShow(5,1);
+    }
+    .fifth.select-second{
+      @include levelShow(5,2);
+    }
+    .fifth.select-third{
+      @include levelShow(5,3);
+    }
+    .fifth.select-fourth{
+      @include levelShow(5,4);
+    }
+    .fifth.select-fifth{
+      @include levelShow(5,5);
+    }
+  }
+  .memberRight{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: .5rem;
+    padding: 0 .75rem;
+    .memberRight-header{
+      width: 100%;
+      height: 2.5rem;
+      line-height: 2.65rem;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: .7rem;
+      color: #333;
+      font-size: .7rem;
+      text-indent: .7rem;
+      position: relative;
+      p>span{
+        font-size: .6rem;
+        color: #999;
+      }
+    }
+    .memberRight-header:before{
+      content: '';
+      width: .2rem;
+      height: .7rem;
+      background: #ffbb32;
+      position: absolute;
+      top: .9rem;
+      left: 0;
+      border-radius: .1rem;
+    }
+    .memberRight-right-wrapper{
+      width: 94%;
+      height: auto;
+      margin: auto;
+      font-size: 0;
+      .memberRight-right-item{
+        width: 33.33%;
+        height: 5.3rem;
+        padding-top: .8rem;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        .memberRight-right-image{
+          width: 100%;
+          height: 2.5rem;
+          img{
+            height: 100%;
+            width: auto;
+            display: block;
+            margin: auto;
+          }
+          >span{
+            height: 2.5rem;
+            width: 2.5rem;
+            display: block;
+            margin: auto;
+            line-height: 2.5rem;
+            border-radius: 50%;
+            border: 2px solid #66A8FF;
+            color: #66A8FF;
+            font-family: 'AbadiMT-CondensedExtraBold';
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
+        .memberRight-right-title{
+          width: 100%;
+          text-align: center;
+          color: #666;
+          font-size: .6rem;
+          margin-top: .4rem;
+        }
+        .memberRight-right-title.disabled{
+          color: #999;
+        }
+        .memberRight-left-splitLine{
+          width: 2px;
+          height: 2rem;
+          position: absolute;
+          top: 1.6rem;
+          left: 0;
+          background: #d8d8d8;
+        }
+      }
+    }
+  }
+  .goOrderBtn{
+    width: 93.3%;
+    height: 2rem;
+    font-size: .75rem;
+    color: #333;
+    letter-spacing: 1px;
+    background: #fff;
+    border: 1px solid #999;
+    display: block;
+    margin: 3rem auto 1rem;
+  }
+}

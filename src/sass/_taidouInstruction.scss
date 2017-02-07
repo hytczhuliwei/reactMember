@@ -1,0 +1,183 @@
+#TaidouInstruction,#ExInstruction,#TdfbInstruction,#XfdxInstruction,#SrlbInstruction{
+	width: 100%;
+	height: auto;
+}
+.ti-header{
+	width: 100%;
+	height: 2rem;
+	background: #fff;
+	padding-top: .6rem;
+	font-size: 0;
+	>div{
+		width: 50%;
+		height: 100%;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+		span{
+			display: inline-block;
+			width: auto;
+			height: 100%;
+			color: #999;
+			font-size: .75rem;
+		}
+		span.active{
+			color: #333;
+			border-bottom: .1rem solid #ee3e54;
+		}
+	}
+}
+.ti-content{
+	width: 100%;
+	height: auto;
+	.ti-item{
+		width: 100%;
+		height: auto;
+		background: #fff;
+		padding: 0 4%;
+		margin-top: .5rem;
+	}
+}
+.ti-item-header{
+	width: 100%;
+	height: 2.5rem;
+	line-height: 2.65rem;
+	border-bottom: 1px solid #e8e8e8;
+	color: #333;
+	font-size: .75rem;
+	text-indent: .7rem;
+	position: relative;
+}
+.ti-item-header:before{
+	content: '';
+	width: .2rem;
+	height: .7rem;
+	background: #ffbb32;
+	position: absolute;
+	top: .9rem;
+	left: -.2rem;
+	border-radius: .1rem;
+}
+.ti-item-content{
+	width: 100%;
+	height: auto;
+	padding: .9rem 0 .5rem;
+	p{
+		font-size: .65rem;
+		color: #999;
+		span{
+			color: #ee3e54;
+			display: inline-block;
+			vertical-align: top;
+			line-height: 1.2rem;
+		}
+	}
+	p.specialIns{
+		margin-top: 1rem;
+		color: #333;
+	}
+	img{
+		width: 100%;
+		height: auto;
+		display: block;
+		margin-top: .7rem;
+	}
+	table{
+		width: 100%;
+		height: auto;
+		margin:auto;
+		text-align: center;
+		tr{
+			width: 100%;
+			height: 1.5rem;
+			border-bottom: 1px solid #fff;
+			background: #efefef;
+			color: #999;
+			font-size: .6rem;
+			td:first-child{
+				background: #82d4e3;
+				color: #fff;
+				font-size: .65rem;
+			}
+		}
+		tr:first-child{
+			background: #00a1bf;
+			color: #fff;
+			font-size: .7rem;
+			height: 1rem;
+			td:first-child{
+				background: #82d4e3;
+				color: #fff;
+			}
+		}
+	}
+	table.ex-table{
+		margin: .4rem auto;
+	}
+}
+.insXyBtn{
+	width: auto;
+	height: 1.2rem;
+	border-bottom: 1px solid #666;
+	font-size: .75rem;
+	color: #666;
+	float: right;
+	margin: .7rem 5.3% 1rem 0;
+}
+#TdfbInstruction .specialIns{
+	margin-top: 0!important;
+	margin-bottom: .6rem;
+}
+#TdfbInstruction img{
+	margin-top: .4rem;
+}
+#TdfbInstruction .ti-item-header{
+	border-bottom: none;
+}
+#TdfbInstruction .ti-item-content{
+	padding-top: 0;
+}
+#XfdxInstruction>img,#SrlbInstruction>img{
+	width: 100%;
+	margin-top: .5rem;
+	display: block;
+}
+.ti-item-taidouRatio{
+	width: 100%;
+	height: auto;
+	font-size: 0;
+	.ti-item-taidouRatio-item{
+		width: 20%;
+		height: 4.1rem;
+		display: inline-block;
+		vertical-align: top;
+		span{
+			border-radius: 50%;
+		}
+		span:nth-child(1){
+			width: 1.45rem;
+			height: 1.45rem;
+			background: #30ccff;
+			color: #fff;
+			font-size: .7rem;
+			font-family: 'hyi4gj';
+			display: block;
+			text-align: center;
+			line-height: 1.5rem;
+			margin: auto;
+		}
+		span:nth-child(2){
+			width: 2.2rem;
+			height: 2.2rem;
+			background: #fff;
+			color: #66a8ff;
+			border: 1px solid #668aff;
+			font-size: 1rem;
+			font-family: 'AbadiMT-CondensedExtraBold';
+			display: block;
+			text-align: center;
+			line-height: 2.2rem;
+			margin: .45rem auto 0;
+		}
+	}
+}

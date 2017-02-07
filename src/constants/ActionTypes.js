@@ -1,0 +1,16 @@
+/**
+ * Created by liwei.zhu on 16/12/20.
+ */
+export const FETCH_LEVELINFO = 'FETCH_LEVELINFO'
+
+export const SET_USER_LEVEL_INFO_ISLOAD = 'SET_USER_LEVEL_INFO_ISLOAD'
+
+export const SET_TIBEAN_DATA = 'SET_TIBEAN_DATA'
+
+export const SET_TIBEAN_NULL_FLAG = 'SET_TIBEAN_NULL_FLAG'
+
+export const SET_EXPERIENCE_DATA = 'SET_EXPERIENCE_DATA'
+
+export const SET_LEVEL_RULE = 'SET_LEVEL_RULE'
+
+export const SET_AMOUNT_RULE = 'SET_AMOUNT_RULE'
